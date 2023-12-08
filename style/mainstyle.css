@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    background-color: #effaf6; 
+    text-align: center;
+    padding: 20px 0; 
+    width: 100%; 
+}
+
+header img {
+    width: 400px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav {
+    background-color: #1b5364;
+    height: 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+main {
+    background-color: #dbdbdd;
+    min-height: 500px; /* Use min-height instead of height to allow for dynamic content */
+    padding: 13%;
+}
+
+footer {
+    background-color: rgb(181, 181, 181);
+    height: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+nav a {
+    color: white; 
+    text-decoration: none;
+    margin: 0 15px; 
+}

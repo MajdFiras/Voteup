@@ -9,6 +9,8 @@ if (isset($_SESSION["user"])) {
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +57,26 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
+
     </div>
 
 </body>
 </html>
+
+
+<?php 
+$stmt = $db->prepare('SELECT fname, lname,id FROM users WHERE email = :email');
+$stmt->bindParam(':email', $email);
+$stmt->execute();
+$userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($userData) {
+    $_SESSION['fname'] = $userData['fname'];
+    $_SESSION['lname'] = $userData['lname'];
+    $_SESSION['id'] = $userData['id'];
+} else {
+    // Handle the case where no user with the specified email is found
+    // You may want to set default values or display an error message
+}
+?>

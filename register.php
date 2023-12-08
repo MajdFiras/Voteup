@@ -50,6 +50,9 @@ $error_msg = "The password should contain:\\n • minimum 8 characters in length
     $email = $_POST["email"];
     $password = $_POST["password"];
 
+
+
+
     $stmt = $db->prepare('SELECT * FROM users WHERE email = :email');
     $stmt->bindParam(':email', $email);
     $stmt->execute();
