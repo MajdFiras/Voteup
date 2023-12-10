@@ -81,3 +81,12 @@ input[type="submit"]:hover {
 .btn button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
+.btn-conatiner {
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+justify-content: space-around;
+
+}
