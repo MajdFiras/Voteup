@@ -38,12 +38,21 @@ include("header.php");
                         <input type="text" name="options[]" required>
                     </div>
             </div>
-
+            
+            <div class="btn-conatiner">
             <div class="btn">
             <button type="button" onclick="addOption()">Add Option</button>
             </div>
 
-            
+            <div class="btn">
+            <button type="button" onclick="removeOption()">remove Option</button>
+            </div>
+
+            <div class="btn">
+            <button type="button" onclick="clearAll()">Clear</button>
+            </div>
+            </div>
+
             <label for="end_date">End Date:</label>
             <input type="datetime-local" id="end_date" name="end_date" requird>
 
@@ -104,4 +113,22 @@ if (isset($_POST["create"])) {
             
             optionsContainer.appendChild(newOptionDiv);
         }
+
+        function removeOption() {
+            var optionsContainer = document.getElementById("options-container");
+
+        if (optionsContainer.children.length > 1) {
+            optionsContainer.removeChild(optionsContainer.lastChild);
+        }
+        }
+
+        function clearAll() {
+    document.getElementById("question").value = "";
+
+    var optionsInputs = document.getElementsByName("options[]");
+    for (var i = 0; i < optionsInputs.length; i++) {
+        optionsInputs[i].value = "";
+    }
+    }
+
     </script>
