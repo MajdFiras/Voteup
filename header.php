@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voteup</title>
+    <title><?php echo $pageTitle; ?></title>
     <link rel="stylesheet" href="style/mainstyle.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
     </header>
     <nav>
         <a href="createpolls.php">Create Poll</a>
+        <a href="mypolls.php">My Polls</a>
         <a href="openpolls.php">Open polls </a>
         <a href="endedpolls.php">Ended polls</a>
         <a href="logout.php">Logout</a>

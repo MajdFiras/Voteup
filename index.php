@@ -5,7 +5,10 @@ if (!isset($_SESSION["user"])) {
 }
 ?>
 
-<?php include("header.php"); ?>
+<?php 
+$pageTitle = "VoteUp";
+include("header.php"); 
+?>
     <main>
      
     </main>

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Set default font family */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+.container2 {
+    width: 500px; /* Adjust the width as needed */
+    height: auto; /* Allow the container to adjust its height based on content */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Add padding to the container */
+    box-sizing: border-box;
+    margin: auto; /* Include padding and border in the width and height */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    width: calc(100% - 20px); /* Adjusted width to consider left margin */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #3ead44;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #357c39;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

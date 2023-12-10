@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
+
 body {
     margin: 0;
     padding: 0;
+    
 }
 
 .container {
@@ -8,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #effaf6; 
+    background-color: #9EB8D9; 
     text-align: center;
     padding: 20px 0; 
     width: 100%; 
@@ -22,24 +26,26 @@ header img {
 }
 
 nav {
-    background-color: #1b5364;
+    background-color: #A25772;
     height: 40px;
     display: flex;
     justify-content: center; 
     align-items: center; 
+    font-family: 'Open Sans', sans-serif;
 }
 
 main {
-    background-color: #dbdbdd;
+    background-color: #EEF5FF;
     min-height: 500px; /* Use min-height instead of height to allow for dynamic content */
     padding: 13%;
 }
 
 footer {
-    background-color: rgb(181, 181, 181);
+    background-color: #7C93C3;
     height: 100px;
     text-align: center;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 nav a {
