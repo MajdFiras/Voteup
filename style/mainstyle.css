@@ -53,3 +53,9 @@ nav a {
     text-decoration: none;
     margin: 0 15px; 
 }
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: -40px;
+}

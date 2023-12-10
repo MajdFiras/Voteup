@@ -41,7 +41,7 @@ include("header.php");
             }
 
         .result-button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50; 
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -54,7 +54,7 @@ include("header.php");
             font-family: 'Open Sans', sans-serif;
         }
         .stop-button{
-            background-color: #E13535; /* Green */
+            background-color: #E13535; 
             color: white;
             padding: 10px 20px;
             text-align: center;
@@ -77,10 +77,10 @@ include("header.php");
         $stmt->bindParam(':id', $uid);
         $stmt->execute();
 
-        // Fetch all rows as an associative array
+        
         $polls = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Check if there are any polls
+       
         if ($polls) {
             foreach ($polls as $poll) {
                 ?>
