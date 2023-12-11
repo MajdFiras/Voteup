@@ -66,6 +66,16 @@ include("header.php");
             cursor: pointer;
             font-family: 'Open Sans', sans-serif;
         }
+
+        a{ 
+            text-decoration: none;
+        }
+        p{
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 20px;
+            
+        }
     </style>
 
 
@@ -90,7 +100,7 @@ include("header.php");
                             <h5 class="card-title"><?php echo $poll['question']; ?></h5>
                             <div class="card-buttons">
                                 <button class="result-button">See Results</button>
-                                <button class="stop-button">Stop</button></a>
+                                <button class="stop-button"><a href="stoppolls.php?poll_id=<?php echo $poll['poll_id'];?>">Stop</a></button></a>
                             </div>
                         </div>
                     </div>

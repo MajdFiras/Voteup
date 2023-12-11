@@ -57,6 +57,11 @@ include("header.php");
             cursor: pointer;
             font-family: 'Open Sans', sans-serif;
         }
+        p{
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
     </style>
         <h1> Latest 5 Polls</h1>
         
@@ -83,7 +88,7 @@ include("header.php");
                     <?php
                 }
     } else {
-        echo '<p>No polls found.</p>';
+        echo '<p>No polls for now. : )</p>';
     }
     ?>
        
