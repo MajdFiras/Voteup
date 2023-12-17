@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,12 +17,19 @@ body {
 }
 
 h2 {
+    font-family: 'Open Sans', sans-serif;
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+
+h1, h4 {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+}
 form {
+    font-family: 'Open Sans', sans-serif;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -31,6 +40,7 @@ form {
 }
 
 input {
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -40,6 +50,7 @@ input {
 }
 
 label {
+    font-family: 'Open Sans', sans-serif;
     display: block;
     margin-bottom: 10px;
 }
@@ -58,11 +69,27 @@ input[type="submit"]:hover {
 
 .new {
     margin-top: 20px;
-    width: 300px; /* Adjust the width as needed */
+    width: 300px; 
     text-align: center;
     color: rgb(34, 34, 34);
     background-color: #fff;
     border-radius: 8px;
     border-left: 3px solid red;
 
+}
+
+.error-container {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+    color: #ff0000;
+    border-radius: 8px;
+    width: 300px; 
+    text-align: center;
+}
+
+.error-container p {
+    margin: 0;
 }

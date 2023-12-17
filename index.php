@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
-}
-?>
+
 
 <?php 
 $pageTitle = "VoteUp";
@@ -67,7 +62,7 @@ include("header.php");
         
         <?php
         require("connection.php");
-        $stmt = $db->prepare('SELECT question, poll_id FROM poll ORDER BY poll_id DESC LIMIT 5');
+        $stmt = $db->prepare('SELECT question, poll_id FROM poll WHERE status = 0 ORDER BY poll_id DESC LIMIT 5');
         $stmt->execute();
         $polls = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
@@ -79,8 +74,8 @@ include("header.php");
                             <div class="card-content">
                                 <h5 class="card-title"><?php echo $poll['question']; ?></h5>
                                 <div class="card-buttons">
-                                    <button class="result-button">See Results</button>
-                                    <button class="vote-button">Vote</button>
+                                    <a href="results.php?poll_id=<?php echo $poll['poll_id'];?>"><button class="result-button">See Results</button></a> 
+                                    <a href="vote.php?poll_id=<?php echo $poll['poll_id'];?>"><button class="vote-button">Vote</button></a>  
                                 </div>
                             </div>
                         </div>

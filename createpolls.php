@@ -1,13 +1,13 @@
-<?php
-session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
-}
-?>
 <?php 
 $pageTitle = "Create Polls";
 include("header.php");
  ?>
+<?php
+if (!isset($_SESSION["user"])) {
+   header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +78,7 @@ if (isset($_POST["create"])) {
     $options_str = is_array($options) ? implode(', ', $options) : $options;
     $end_date = $_POST['end_date'];
 
-    $sql = "INSERT INTO poll(creator_id, question, options, end_date) VALUES (:creator_id, :question, :options, :end_date)";
+    $sql = "INSERT INTO poll(creator_id, question,options,end_date) VALUES (:creator_id, :question, :options, :end_date)";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute(array(
@@ -92,9 +92,10 @@ if (isset($_POST["create"])) {
 
     $db = null;
 
+  }  
     
 
-}
+
 
 ?>
 
@@ -122,6 +123,19 @@ if (isset($_POST["create"])) {
         }
         }
 
+        function validateEndDate() {
+        var endDateInput = document.getElementById("end_date");
+        var currentDate = new Date();
+        var selectedDate = new Date(endDateInput.value);
+
+        if (selectedDate < currentDate) {
+            alert("Please select a date equal to or after the current date.");
+            endDateInput.value = ""; 
+            return false; 
+
+        return true; 
+    }
+
         function clearAll() {
     document.getElementById("question").value = "";
 
@@ -130,5 +144,10 @@ if (isset($_POST["create"])) {
         optionsInputs[i].value = "";
     }
     }
+    document.querySelector("form").addEventListener("submit", function (event) {
+        if (!validateEndDate()) {
+            event.preventDefault(); 
+        }
+    });
 
     </script>

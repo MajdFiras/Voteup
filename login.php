@@ -17,6 +17,8 @@ if (isset($_SESSION["user"])) {
 
     <div class="container">
         <h1>Login</h1>
+            <hr>
+
         <h4>You dont Have an account? <a href="register.php">SIGNUP</a></h4>
 
         <form action="#" method="post">

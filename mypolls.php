@@ -1,14 +1,14 @@
 <?php
-session_start();
+$pageTitle = "My Polls";
+include("header.php");
+?>
+<?php
 if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit(); // Make sure to stop execution after redirect
 }
 ?>
-<?php
-$pageTitle = "My Polls";
-include("header.php");
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,10 +65,12 @@ include("header.php");
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
         }
 
         a{ 
             text-decoration: none;
+            color: inherit;
         }
         p{
             font-family: 'Open Sans', sans-serif;
@@ -83,7 +85,7 @@ include("header.php");
         <?php
         require("connection.php");
         $uid = $_SESSION['id'];
-        $stmt = $db->prepare('SELECT question,poll_id FROM poll WHERE creator_id = :id');
+        $stmt = $db->prepare('SELECT question,poll_id FROM poll WHERE creator_id = :id AND status = 0');
         $stmt->bindParam(':id', $uid);
         $stmt->execute();
 
@@ -99,7 +101,7 @@ include("header.php");
                         <div class="card-content">
                             <h5 class="card-title"><?php echo $poll['question']; ?></h5>
                             <div class="card-buttons">
-                                <button class="result-button">See Results</button>
+                                <a href="results.php?poll_id=<?php echo $poll['poll_id'];?>"><button class="result-button">See Results</button></a> 
                                 <button class="stop-button"><a href="stoppolls.php?poll_id=<?php echo $poll['poll_id'];?>">Stop</a></button></a>
                             </div>
                         </div>
