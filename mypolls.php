@@ -68,6 +68,21 @@ if (!isset($_SESSION["user"])) {
             text-decoration: none;
         }
 
+        .ended-button{
+            background-color: #808080; 
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            text-decoration: none;
+        }
+
         a{ 
             text-decoration: none;
             color: inherit;
@@ -85,7 +100,7 @@ if (!isset($_SESSION["user"])) {
         <?php
         require("connection.php");
         $uid = $_SESSION['id'];
-        $stmt = $db->prepare('SELECT question,poll_id FROM poll WHERE creator_id = :id AND status = 0');
+        $stmt = $db->prepare('SELECT question,poll_id,status FROM poll WHERE creator_id = :id ORDER BY status  ');
         $stmt->bindParam(':id', $uid);
         $stmt->execute();
 
@@ -102,7 +117,12 @@ if (!isset($_SESSION["user"])) {
                             <h5 class="card-title"><?php echo $poll['question']; ?></h5>
                             <div class="card-buttons">
                                 <a href="results.php?poll_id=<?php echo $poll['poll_id'];?>"><button class="result-button">See Results</button></a> 
-                                <button class="stop-button"><a href="stoppolls.php?poll_id=<?php echo $poll['poll_id'];?>">Stop</a></button></a>
+                                <?php if ($poll['status'] == 0) { ?>
+                                <button class="stop-button"><a href="stoppolls.php?poll_id=<?php echo $poll['poll_id']; ?>">Stop</a></button>
+                                <?php } 
+                                else {  ?>
+                                <div class="ended-button">Ended</div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
