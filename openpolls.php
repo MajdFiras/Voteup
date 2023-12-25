@@ -90,7 +90,7 @@ include("header.php");
         $recordsPerPage = 10;
         $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
         $start = ($current_page - 1) * $recordsPerPage;
-        $stmt = $db->prepare('SELECT question, poll_id FROM poll WHERE status = 0 ORDER BY poll_id LIMIT :start, :recordsPerPage');
+        $stmt = $db->prepare('SELECT question, poll_id FROM poll WHERE status = 0 ORDER BY s_date DESC LIMIT :start, :recordsPerPage');
         $stmt->bindParam(':start', $start, PDO::PARAM_INT);
         $stmt->bindParam(':recordsPerPage', $recordsPerPage, PDO::PARAM_INT);
         $stmt->execute();
