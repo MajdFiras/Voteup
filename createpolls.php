@@ -131,7 +131,7 @@ if (isset($_POST["create"])) {
         if (selectedDate < currentDate) {
             alert("Please select a date equal to or after the current date.");
             endDateInput.value = ""; 
-            return false; 
+            return false; }
 
         return true; 
     }
